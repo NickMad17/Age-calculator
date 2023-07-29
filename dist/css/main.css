@@ -1,0 +1,293 @@
+@import "./normilize.css";
+/*Add styles normilize*/
+@import "./fonts.css";
+/*Add styles fonts*/
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  color: #000;
+  background: #ebebeb;
+}
+
+.center {
+  margin-left: calc(50% - 25rem);
+  margin-right: calc(50% - 25rem);
+}
+
+.header {
+  text-align: center;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  letter-spacing: 0.01em;
+  color: #141414;
+}
+
+.header__info{
+  text-justify: newspaper;
+  font-style: normal;
+  font-weight: 400;
+  color: #716f6f;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: #141414;
+  margin: 1.6rem 0;
+}
+
+.app{
+  background: #fff;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  border-radius: 24px 24px 200px 24px;
+
+}
+
+.container{
+  padding: 6rem;
+}
+
+.form-container{
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 3.125rem;
+  
+}
+
+.form__input-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label{
+  /* font-family: 'Overpass', sans-serif; */
+  color: Grey;
+  /* padding-bottom:; */
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 3rem; 
+}
+
+.label-focus{
+  color: #854dff;
+  transition: all 0.4s ease-out; 
+}
+
+
+.form__input{
+  background: #fff;
+    width: 10rem;
+    border: none;
+    border-radius: 10px;
+    border-color: gray;
+    border: rgba(205, 205, 205, 0.699) solid 3px;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    font-size: 2rem;
+    transition: 0.3s ease;
+    appearance: none;
+}
+
+.form__input::placeholder{
+  color: rgba(128, 128, 128, 0.671);
+}
+
+.form__input::-webkit-outer-spin-button,
+.form__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.form__input:hover{
+  border-color: #854dff82;
+  cursor: pointer;
+}
+
+.form__input:focus{
+  border-color:#854dff;
+}
+
+.input-focus:focus{
+  border-color: rgb(255, 0, 89);
+  transition: all 0.4s ease-in-out;
+}
+
+.input-hover:hover{
+  border-color: rgb(255, 0, 89);
+  transition: all 0.4s ease-in-out;
+}
+
+.button-wrapper{
+  margin: 2rem 0;
+  position: relative;
+  z-index: 300;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.button{
+  border: none;
+  background-color: transparent;
+  margin-bottom: 3rem;
+}
+
+.img {
+  width: 5.7rem;
+  background: #854dff;
+  border-radius: 50%;
+  padding: 1.2rem;
+  z-index: 200;
+  transform: rotate(-90deg);
+  animation: rotate-start 2s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+button img:hover{
+  background: #854dff;
+}
+
+.button-wrapper::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #DCDCDC;
+  top: 33%;
+}
+
+.counters__text{
+  font-size: 6.5rem;
+  font-weight: 800;
+  line-height: 7.125rem;
+}
+
+.footer{
+  text-align: center;
+}
+
+.footer__link{
+  color: #854dff;
+}
+
+/* Доп классы */
+.err-btn {
+  background: #ff0000;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+
+.err-input{
+  border: none;
+  border: red solid 3px;
+  transition: all 0.4s ease-in-out ;
+  /* border-color: rgb(167, 3, 3); */
+}
+
+.err-label{
+  color: red;
+  transition: all 0.4s ease-in-out ;
+}
+
+.complete {
+  background: #00ff40;
+  transition: all 0.4s ease-in-out ;
+  animation: rotate-top 0.6s ease-in-out both;
+}
+
+.input-complete{
+  border-color: #00ff40;
+  transition: all 0.4s ease-in-out ;
+}
+
+.label-complete{
+  color: #00ff40;
+  transition: all 0.4s ease-in-out ;
+}
+
+@keyframes rotate-start {
+  0%{
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+  100%{
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-top {
+  0% {
+      transform: rotate(0);
+      opacity: 0;
+  }
+  100% {
+      transform: rotate(360deg);
+      opacity: 1;
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+    opacity: 0;
+}
+100% {
+    transform: rotate(540deg);
+    opacity: 1;
+}
+}
+
+@media (max-width: 810px){
+  html{
+    font-size: 10px;
+  }
+
+  .form__input{
+    height: 5.5rem;
+    font-size: 2.5rem;
+  }
+
+  .img{
+    width: 7rem;
+    }
+}
+
+@media (max-width: 520px){
+  html{
+    font-size: 9px;
+  }
+
+}
+
+@media (max-width: 460px){
+  html{
+    font-size: 8px;
+  }
+  .header{
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 410px){
+  html{
+    font-size: 7px;
+  }
+}
+
+

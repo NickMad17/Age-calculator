@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./dist/css/main.css" />
+        <title>Age calculator</title>
+    </head>
+    <body>
+        <header class="header center">
+            <h1 class="header__title">Age calculator app</h1>
+
+            <p class="header__info">Enter the <span class="header__info--emphasis">day</span>, <span class="header__info--emphasis">month</span>, and <span class="header__info--emphasis">year</span> of your
+                birthday (or any past event), to calculate exactly how old you are down to the <span class="header__info--emphasis">year</span>, <span class="header__info--emphasis">month</span> and <span class="header__info--emphasis">day</span>.</p>
+        </header>
+        <main class="app center">
+            <div class="container">
+                <form class="form">
+                    <div class="form-container">
+                        <div class="form__input-wrapper">
+                            <label for="day" class="form__label">DAY</label>
+                            <input
+                                type="number"
+                                name="day"
+                                placeholder="DD"
+                                id="input-day"
+                                class="form__input"
+                            />
+                        </div>
+                        <div class="form__input-wrapper">
+                            <label for="month" class="form__label">MONTH</label>
+                            <input
+                                type="number"
+                                name="month"
+                                placeholder="MM"
+                                id="input-month"
+                                class="form__input"
+                            />
+                        </div>
+                        <div class="form__input-wrapper">
+                            <label for="year" class="form__label">YEAR</label>
+                            <input
+                                type="number"
+                                name="year"
+                                placeholder="YYYY"
+                                id="input-year"
+                                class="form__input"
+                            />
+                        </div>
+                    </div>
+                    
+                <div class="button-wrapper">
+                    <div class="button" id="button"><img class="img" src="./dist/./img/arrow.svg" alt="button"></div>
+                </div>
+                </form>
+                <section class="counters" id="counters">
+                    <p class="counters__text"><span>--</span>years</p>
+                    <p class="counters__text"><span>--</span>month</p>
+                    <p class="counters__text"><span>--</span>days</p>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>
+                Challenge by
+                <a href="#" class="footer__link">Frontend Mentor</a>
+.
+            </p>
+        </footer>
+        <script src="./dist/js/app.js"></script>
+    </body>
+</html>
