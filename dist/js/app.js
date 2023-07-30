@@ -29,25 +29,30 @@ const btn = document.querySelector('.button img');
 
 
 const logCounters = (description, year, month, day) => {
-        if(description){
-            const date = new Date();
-            let myYear = date.getFullYear() - year;
-            let myMonth = (date.getMonth() + 1) - month;
-            let myDay = date.getDate() - day;
-            
-            if (myDay < 0){
-                myDay = +(day) + myDay;
-                myMonth -= 1;
-            }
 
-            if(myMonth < 0 ){
-                myMonth = 12 + myMonth;
-                myYear -= 1;
-            } 
-            
-            counters[0].innerHTML = myYear;
-            counters[1].innerHTML = myMonth;
-            counters[2].innerHTML = myDay;
+    if(description){
+        const date = new Date();
+        let myYear = date.getFullYear() - year;
+        let myMonth = (date.getMonth() + 1) - month;
+        let myDay = date.getDate() - day;
+        
+        if (myDay < 0){
+            myDay = +(day) + myDay;
+            myMonth -= 1;
+        }
+
+        if(myMonth < 0 ){
+            myMonth = 12 + myMonth;
+            myYear -= 1;
+        } 
+
+        if(myDay < 0|| myMonth < 0 || myYear < 0){
+            return true;
+        }
+
+        counters[0].innerHTML = String(myYear) + ' ';
+        counters[1].innerHTML = String(myMonth) + ' ';
+        counters[2].innerHTML = String(myDay) + ' ';
     } else {    
         counters.forEach(counter => {
             counter.innerHTML = '--'
@@ -208,13 +213,20 @@ btn.addEventListener('click', () =>{
     const inputMyDay = inputDay.value;
     const inputMyMonth = inputMonth.value;
     const inputMyYear = inputYear.value;
-    btn.classList.add('complete')
+    logCounters(true, inputMyYear, inputMyMonth, inputMyDay);
+
+    if(logCounters(true, inputMyYear, inputMyMonth, inputMyDay)){
+        classManipulation(inputDay, 1);
+        classManipulation(inputMonth, 2);
+        classManipulation(inputYear, 3);
+        return;
+    }
+    btn.classList.add('complete');
     inputElements.forEach((element, index) => {
         element.classList.add('input-complete');
         labels[index].classList.add('label-complete');
         element.value = "";
         
     })
-    // тут будет дальнейшая логика
-    logCounters(true, inputMyYear, inputMyMonth, inputMyDay);
+    
 })
